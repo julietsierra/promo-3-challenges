@@ -6,6 +6,7 @@ def coach_answer(your_message)
      return ""
    else your_message != your_message.include?("?")
      return "I don't care son, get dressed and go to work !"
+  end
   
 def coach_answer_enhanced(your_message)
   # TODO: return coach answer to your_message, with additional custom rules of yours !
