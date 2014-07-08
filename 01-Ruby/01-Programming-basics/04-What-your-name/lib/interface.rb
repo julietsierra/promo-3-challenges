@@ -1,6 +1,8 @@
-require_relative "compute_name"
+require_relative './compute_name'
 
 def ask_and_get(param)
+	puts "enter your #{param}"
+	return gets.chomp
   #TODO:
   #- Ask the user to write a value for param
   #- Get and return the string inputted by the user
@@ -15,6 +17,8 @@ def name_from_terminal
 end
 
 full_name = name_from_terminal
+
+custom_message = "Hello, " + full_name + " ! "
 
 #TODO: use string concatenation to build a custom message embedding the computed full_name
 
