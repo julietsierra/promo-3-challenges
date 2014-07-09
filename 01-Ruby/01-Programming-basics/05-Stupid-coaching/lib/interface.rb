@@ -1,6 +1,6 @@
 require_relative "coach_answer"
 
-puts: "parle à ton coach"
+ puts: "parle à ton coach"
  your_message = gets.chomp
  puts your_message
  correct_answer = "I am going to work right now SIR !"
