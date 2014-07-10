@@ -24,13 +24,3 @@ def transform(element)
   yield(element)
 end
 
-html = tag("h1") {"HELLO"}
-
-puts html
-
-html = tag ("h1") do
-  tag ("a", ["href","www.google.com"]) {"google"}
-
-end
-
-puts html
