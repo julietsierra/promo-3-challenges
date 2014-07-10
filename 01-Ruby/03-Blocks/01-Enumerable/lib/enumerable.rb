@@ -27,11 +27,13 @@ def first_under(array, limit)
 end
 
 def add_bang(array)
+  array.map {|element| element + "!"}
   # TODO: Take an array of strings and return a new array with "!" appended to each string.
   #       You should use Enumerable#map
 end
 
 def product(array)
+  array.reduce {|element| element * element}
   # TODO: Calculate the product of an array of numbers.
   #       You should use of Enumerable#reduce
 end
