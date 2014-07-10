@@ -15,7 +15,7 @@ def even_numbers(array)
 end
 
 def short_words(array, max_length)
-  array.reject{|element| element > max_lenght}
+  array.reject{|element| element < max_lenght}
   # TODO: Take and array of words, return the array of words not exceeding max_length characters
   #       You should use Enumerable#reject
 end
@@ -40,8 +40,7 @@ end
 
 def sorted_pairs(array)
   result= []
-  array.each_slice(2) {|couple| couple.sort }
-  result << couple.sort
+  array.each_slice(2) {|couple| result << couple.sort }
   result
 
 
