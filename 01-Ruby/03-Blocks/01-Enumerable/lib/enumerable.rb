@@ -33,12 +33,18 @@ def add_bang(array)
 end
 
 def product(array)
-  array.reduce {|element| element * element}
+  array.reduce { |element,value| element*value }
   # TODO: Calculate the product of an array of numbers.
   #       You should use of Enumerable#reduce
 end
 
 def sorted_pairs(array)
+  result= []
+  array.each_slice(2) {|couple| couple.sort }
+  result << couple.sort
+  result
+
+
   # TODO: Reorganize an array into slices of 2 elements, and sort each slice alphabetically.
   #       You should make use of Enumerable#each_slice
 end
