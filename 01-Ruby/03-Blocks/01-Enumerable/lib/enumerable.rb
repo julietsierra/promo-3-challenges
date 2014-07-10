@@ -15,7 +15,7 @@ def even_numbers(array)
 end
 
 def short_words(array, max_length)
-  array.reject{|element| element < max_lenght}
+  array.reject{|element| element_lenght < max_lenght}
   # TODO: Take and array of words, return the array of words not exceeding max_length characters
   #       You should use Enumerable#reject
 end
