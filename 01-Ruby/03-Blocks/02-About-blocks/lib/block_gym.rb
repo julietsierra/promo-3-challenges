@@ -1,11 +1,11 @@
 def tag(tag_name, attr = nil)
 
 if attr == nil
-  full_html="<#{tag_name}> #{yield} </#{tag_name}>"
+  "<#{tag_name}> #{yield} </#{tag_name}>"
    else
-  full_html="<#{tag_name} #{attr[0]}='#{attr[1]}'>#{yield}</#{tag_name}>"
+  "<#{tag_name} #{attr[0]}='#{attr[1]}'>#{yield}</#{tag_name}>"
  end
-  full_html
+
 end
 
 
@@ -15,7 +15,7 @@ def timer_for
   #TODO:  Return time taken to execute the given block
   start_time = time.now
   yield
-  end_time  = time.now - start_time
+  end_time = time.now - start_time
 
 end
 
