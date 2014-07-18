@@ -21,7 +21,6 @@ class Restaurant
   #TODO add relevant accessors if necessary
 def self.filter_by_city(names,city)
   result=[]
-  names = []
   names.each do |restaurant|
     if restaurant.city == city
      result << restaurant
