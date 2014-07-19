@@ -1,32 +1,36 @@
 require 'csv'
 
 class Cookbook
-  def initialize
-    @all_recipes = []
-    @file_path = "/Users/juliette_sanson/code/julietsierra/promo-3-challenges/02-OOP/03-Cookbook/01-Cookbook-v0/lib/recipes.csv"
+
+  attr_reader :recipes
+
+  def initialize(csv_file)
+    @recipes = []
+    @filepath = "promo-3-challenges/02-OOP/03-Cookbook/01-Cookbook-v0/#{csv_file}"
+    load_csv
   end
 
-  def load
-  cvs_options = {col_sep: ',', quote_char: '"'}
-  CSV.foreach(@file_path) do |row|
-    @all_recipes << row
+  def load_csv
+    CSV.foreach(@filepath) do |row|
+      @recipes << Recipe.new(row[0], row[1])
+    end
   end
-
 
   def save
-  CSV.open(@file_path, 'w') do |csv|
-    csv << all_recipes
+    CSV.open(@filepath, 'w') do |csv|
+      @recipes.each do |recipe|
+        csv << [recipe.name, recipe.description]
+      end
+    end
   end
 
-  def add_recipe_to_csv(recipe)
-    @all_recipes << recipe
+  def add_recipe(recipe)
+    @recipes << recipe
     save
   end
 
-  def remove_recipe_from_csv(recipe)
-     @all_recipes = @recipes.delete(recipe)
-     csv << [@all_recipes]
+  def remove_recipe(recipe_id)
+     @recipes.delete_at(recipe_id)
      save
   end
-
-
+end
