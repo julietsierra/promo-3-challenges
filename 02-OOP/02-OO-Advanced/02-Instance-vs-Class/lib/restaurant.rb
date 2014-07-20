@@ -1,8 +1,7 @@
 
 class Restaurant
-  attr_reader :average_rating, :rating
-  attr_accessor :city, :name
-  def initialize(name,city)
+  attr_reader :average_rating, :rating, :city
+  def initialize(city,name)
      @name = name
      @average_rating = 0
      @rating= []
@@ -19,16 +18,14 @@ class Restaurant
 
 
   #TODO add relevant accessors if necessary
-def self.filter_by_city(names,city)
-  result=[]
-  names.each do |restaurant|
-    if restaurant.city == city
-     result << restaurant
-     else
-       false
+  def self.filter_by_city(restos,city)
+    result=[]
+
+    restos.each do |resto|
+      result << resto if resto.city == city
     end
-  end
-    return result
+
+    result
   end
 
 
