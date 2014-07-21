@@ -1,17 +1,20 @@
 require 'csv'
+require_relative 'recipe'
+require_relative "view"
+require_relative "controller"
 
 class Cookbook
 
   attr_reader :recipes
 
-  def initialize(csv_file)
+  def initialize(csv_file_path)
+    @filepath = csv_file_path
     @recipes = []
-    @filepath = "promo-3-challenges/02-OOP/03-Cookbook/01-Cookbook-v0/#{csv_file}"
-    load_csv
+    load_csv(@filepath)
   end
 
-  def load_csv
-    CSV.foreach(@filepath) do |row|
+  def load_csv(file)
+    CSV.foreach(file) do |row|
       @recipes << Recipe.new(row[0], row[1])
     end
   end
