@@ -5,15 +5,18 @@ database_path = File.join(File.dirname(__FILE__), 'db/jukebox.sqlite')
 db = SQLite3::Database.new(database_path)
 
 def number_of_rows(db, table_name)
-  #TODO: count number of rows in table table_name
+  tab = db.execute "COUNT * FROM #{table_name}"
+  tab.flatten
 end
 
 def sorted_artists(db)
-  #TODO: return array of artists' names sorted alphabetically
+  tab = db.execute "SELECT name FROM artist ORDER by name DESC "
+  tab.flatten
 end
 
 def love_tracks(db)
-  #TODO: return array of love songs
+ tab = db.execute "SELECT * FROM track WHEN name '%(love)%'"
+ tab.flatten
 end
 
 def long_tracks(db, min_length)
