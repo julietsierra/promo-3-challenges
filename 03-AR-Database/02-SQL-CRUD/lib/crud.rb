@@ -16,8 +16,8 @@ def create_scheme(db)
 end
 
 def create_post(db, post)
-  db.execute "INSERT INTO posts (name,rating,source_url,date)
-  VALUES ('#{post[:name]}',#{post[:rating]},'#{post[:source_url]}','#{post[:date]}')"
+  db.execute("INSERT INTO posts (name,rating,source_url,date)
+  VALUES ('#{post[:name]}',#{post[:rating]},'#{post[:source_url]}','#{post[:date]}')")
 
 end
 
