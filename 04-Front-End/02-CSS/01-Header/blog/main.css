@@ -1,5 +1,31 @@
 .container {
   margin: 0 auto;
   width: 720px;
-	font-family: 'Open Sans', sans-serif;
+}
+
+article, aside, footer, header, hgroup, main, nav, section {
+display: block;
+}
+
+header ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+
+body {
+font-weight: 300; font-family: helvetica
+}
+
+header li {
+display: inline-block; margin: 10px
+}
+
+header {
+border-bottom: 1px dotted grey;
+padding: 10px;
+}
+header h1 {
+  text-align: center;
 }
