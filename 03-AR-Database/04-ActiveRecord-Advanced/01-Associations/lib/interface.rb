@@ -2,9 +2,11 @@ require_relative 'config/application'
 require_relative 'models/post'
 require_relative 'models/user'
 
-User.where(name:'toto', email:'toto@toto.com').first_or_create
+User.destroy_all
 
-p User.last
+User.create(name:'toto', email:'toto@toto.com')
+User.create(name:'titi ', email:'toto@toto.com')
+User.create(name:'tutu', email:'toto@toto.com')
 
 def ask(prompt)
   print "#{prompt} "
@@ -28,19 +30,21 @@ def list_posts(user)
 end
 
 def delete_posts(user)
-  user.posts.detroy_all
+  user.posts.destroy_all
   # TODO: use ActiveRecord to delete all posts of current user
 end
 
 logged_in = false
 
-  until logged_in
-    puts 'Please login with your <id>'
-    id = gets.chomp.to_i
-    id = user.id
-
-    # TODO: instantiate a user with his <id>
+until logged_in
+  puts 'Please login with your <id>'
+  id = gets.chomp.to_i
+  user = User.find(id)
+  if user
+    logged_in = true
   end
+    # TODO: instantiate a user with his <id>
+end
 
 
 while true
